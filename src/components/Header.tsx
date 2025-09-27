@@ -1,6 +1,7 @@
-import { ShoppingCart, Menu, Fish, Phone, Mail } from "lucide-react";
+import { ShoppingCart, Menu, Fish, Phone, Mail, User, Heart } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
@@ -8,7 +9,7 @@ const Header = () => {
       <div className="container mx-auto px-4 py-3">
         <div className="flex items-center justify-between">
           {/* Logo & Brand */}
-          <div className="flex items-center space-x-3">
+          <Link to="/" className="flex items-center space-x-3 hover:opacity-80 transition-opacity">
             <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-primary to-accent">
               <Fish className="h-6 w-6 text-white" />
             </div>
@@ -16,17 +17,17 @@ const Header = () => {
               <h1 className="text-xl font-bold text-foreground">Rameshwaram Dry Fish</h1>
               <p className="text-xs text-muted-foreground">Authentic Tamil Nadu Specialties</p>
             </div>
-          </div>
+          </Link>
 
           {/* Navigation */}
           <nav className="hidden md:flex items-center space-x-6">
-            <a href="#home" className="text-foreground hover:text-primary transition-colors">Home</a>
-            <a href="#products" className="text-foreground hover:text-primary transition-colors">Products</a>
-            <a href="#about" className="text-foreground hover:text-primary transition-colors">About</a>
-            <a href="#contact" className="text-foreground hover:text-primary transition-colors">Contact</a>
+            <Link to="/" className="text-foreground hover:text-primary transition-colors">Home</Link>
+            <Link to="/#products" className="text-foreground hover:text-primary transition-colors">Products</Link>
+            <Link to="/#about" className="text-foreground hover:text-primary transition-colors">About</Link>
+            <Link to="/#contact" className="text-foreground hover:text-primary transition-colors">Contact</Link>
           </nav>
 
-          {/* Contact Info & Cart */}
+          {/* Contact Info & Actions */}
           <div className="flex items-center space-x-4">
             <div className="hidden lg:flex items-center space-x-4 text-sm">
               <div className="flex items-center space-x-1 text-muted-foreground">
@@ -39,12 +40,32 @@ const Header = () => {
               </div>
             </div>
             
-            <Button variant="outline" size="icon" className="relative">
-              <ShoppingCart className="h-5 w-5" />
-              <Badge className="absolute -top-2 -right-2 h-5 w-5 rounded-full p-0 text-xs bg-gold text-gold-foreground">
-                3
-              </Badge>
-            </Button>
+            {/* User Actions */}
+            <div className="hidden sm:flex items-center space-x-2">
+              <Link to="/wishlist">
+                <Button variant="ghost" size="icon" className="relative">
+                  <Heart className="h-5 w-5" />
+                  <Badge className="absolute -top-2 -right-2 h-5 w-5 rounded-full p-0 text-xs bg-destructive text-destructive-foreground">
+                    2
+                  </Badge>
+                </Button>
+              </Link>
+              
+              <Link to="/cart">
+                <Button variant="outline" size="icon" className="relative">
+                  <ShoppingCart className="h-5 w-5" />
+                  <Badge className="absolute -top-2 -right-2 h-5 w-5 rounded-full p-0 text-xs bg-gold text-gold-foreground">
+                    3
+                  </Badge>
+                </Button>
+              </Link>
+              
+              <Link to="/login">
+                <Button variant="ghost" size="icon">
+                  <User className="h-5 w-5" />
+                </Button>
+              </Link>
+            </div>
 
             <Button variant="ghost" size="icon" className="md:hidden">
               <Menu className="h-5 w-5" />
