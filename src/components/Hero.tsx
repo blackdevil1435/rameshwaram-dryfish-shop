@@ -26,7 +26,8 @@ const Hero = () => {
               <p className="text-lg md:text-xl text-muted-foreground max-w-xl">
                 Experience the rich coastal flavors of Rameshwaram with our premium 
                 dried fish varieties. Naturally sun-dried using traditional methods 
-                passed down through generations.
+                passed down through generations. From the sacred waters to your table, 
+                taste the authentic heritage of Tamil Nadu's finest dried fish collection.
               </p>
             </div>
 
@@ -60,11 +61,11 @@ const Hero = () => {
 
             {/* Call to Action */}
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button variant="hero" size="lg" className="text-lg">
-                Shop Our Collection
+              <Button variant="hero" size="lg" className="text-lg" asChild>
+                <a href="#products">Shop Our Collection</a>
               </Button>
-              <Button variant="outline" size="lg" className="text-lg">
-                Learn Our Story
+              <Button variant="outline" size="lg" className="text-lg" asChild>
+                <a href="#about">Learn Our Story</a>
               </Button>
             </div>
 

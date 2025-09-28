@@ -18,10 +18,18 @@ const About = () => {
                 Authentic <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Tradition</span> from Rameshwaram
               </h2>
               
-              <p className="text-lg text-muted-foreground">
+              <p className="text-lg text-muted-foreground mb-6">
                 For over 25 years, we've been preserving the authentic art of fish drying 
                 using traditional methods passed down through generations of Tamil Nadu fishermen. 
                 Our premium dry fish comes directly from the sacred waters of Rameshwaram.
+              </p>
+
+              <p className="text-md text-muted-foreground">
+                Located in the holy island of Rameshwaram, our family business has been serving authentic 
+                dried fish to Tamil Nadu households and restaurants worldwide. We follow ancient sun-drying 
+                techniques that preserve not just the fish, but the rich cultural heritage of our coastal community. 
+                Each piece of fish is carefully selected by our experienced fishermen who understand the waters 
+                like their ancestors did centuries ago.
               </p>
             </div>
 
